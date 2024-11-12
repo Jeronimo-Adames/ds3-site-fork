@@ -236,6 +236,79 @@
         font-size: 4vh;
         margin-top: 0;
     }
+    #modal-info {
+        display: relative;
+    }
+    #modal-info::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        height: 10%;
+        width: 100%;
+        background: linear-gradient(transparent, white);
+    }
+    #modal span {
+        font-size: 2vh;
+        font-weight: 1000;
+        width: 100%;
+    }
+    #desc {
+        font-size: 1.5vh;
+    }
+    #hosts {
+        font-size: 1.5vh;
+        font-weight: 400;
+    }
+    #button-wrapper {
+        width: 100%;
+        display: inline-block;
+    }
+    #button-wrapper a {
+        background-color: var(--ds3-orange);
+        display: inline-block;
+        border: none;
+        font-size: 1.5vh;
+        font-weight: bold;
+        padding: 1.5% 4%;
+        color: white;
+        border-radius: 5px;
+        text-align: center; 
+        display: inline-block;
+        align-items: center;
+        width: auto;
+        margin-top: 1.5vh;
+    }
+    #button-wrapper a:hover {
+        cursor: pointer;
+        background-color: var(--ds3-orange-lighten);
+    }
+    #button-wrapper button {
+        background-color: var(--ds3-orange);
+        display: inline-block;
+        border: none;
+        font-size: 1.5vh;
+        font-weight: bold;
+        padding: 1.5% 4%;
+        color: white;
+        border-radius: 5px;
+        text-align: center; 
+        display: inline-block;
+        align-items: center;
+        width: auto;
+        margin-top: 1.5vh;
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: var(--ds3-orange-lighten);
+    }
+    .disabled {
+        opacity: 0.5;
+    }
+    .disabled:hover {
+        cursor: not-allowed;
+        background-color: var(--ds3-orange);
+    }
 
     /* Styling for right section of modal with the embedded map, includes overflow control */
     .right {
