@@ -1,4 +1,5 @@
 <script lang='ts'>
+    // Imports board member data and data for board member display also sets page title and description
     import boardMembers from "$web-config/board.json"
     import BoardCard from "$lib/client/boardCard.svelte";
     
@@ -7,6 +8,7 @@
 </script>
 
 <svelte:head>
+    <!-- Search engine optimization tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
@@ -19,6 +21,7 @@
 </svelte:head>
 
 <section>
+    <!-- displays board members in a grid -->
     <div class="title-sec">
         <h1>BOARD</h1>
     </div>
@@ -33,6 +36,7 @@
 </section>
 
 <style>
+    /* Font and section styling part */
     @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
     @font-face {
         font-family: "Montserrat Bold";
@@ -44,8 +48,8 @@
         background-color: var(--base-bg);
     }
     
+    /* title section styling part*/
     .title-sec {
-        /* height: 40vh; */
         background-image: url("/images/backgrounds/placeholder.jpg");
         background-size: cover;
         background-position: center;
@@ -62,6 +66,7 @@
         font-family: 'Montserrat Bold';
     }
 
+    /* Board section styling part */
     .board-sec {
         padding-bottom: 5vh;
     }
@@ -82,29 +87,23 @@
         margin: auto;
     }
 
-    @media screen and (min-width: 1100px)
-    {
-        .title-sec 
-        {
+    /* style part for responsive styling based on screen size (Needs Fixing!) */
+    @media screen and (min-width: 1100px) {
+        .title-sec {
             height: 30vh;
         }
     }
 
-    @media screen and (max-width: 1100px)
-    {
-        #people-grid 
-        {
+    @media screen and (max-width: 1100px) {
+        #people-grid {
             grid-template-columns: repeat(2, 50%);
         }
     }
 
-    @media screen and (max-width: 480px)
-    {
-        #people-grid 
-        {
+    @media screen and (max-width: 480px) {
+        #people-grid {
             grid-template-columns: repeat(1, 100%);
         }
-
     }
 
 </style>

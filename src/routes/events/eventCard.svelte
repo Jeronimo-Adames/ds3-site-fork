@@ -36,10 +36,12 @@
         eventDescription = ""
     }
 
+    // Redirect function opens urls in new tab
     const redirect = (url: string | undefined) => window.open(url, '_blank', 'noopener')
 
 </script>
 
+<!-- Event card with click interaction on button that opens a popup -->
 <div class="card" on:click={()=>getModal(event.title).open()} on:keydown={()=>getModal(event.title).open()}>
     <div id="img" style="background-image: url('/images/stock-people/{eventImage}');"></div>
     <div class="card-info">
@@ -57,6 +59,8 @@
         </div></div>
     </div>
 </div>
+
+<!-- display for event details -->
 <Modal id="{event.title}">
     <div id="modal">
         <div id="modal-img" style="background-image: url('/images/stock-people/{eventImage}');"></div>
@@ -102,6 +106,8 @@
                     <div id="modal-spacer">.</div>
                 </div>
             </div>
+
+            <!-- Display shows an embedded google map with location -->
             <div class="right">
                 <iframe
                     title="{event.title} location"
@@ -117,6 +123,10 @@
 </Modal>
 
 <style>
+    /* this entire section needs a touchup, as the event cards dont look good...
+    
+    Font settings and styling */
+
     @font-face {
         font-family: "Montserrat Bold";
         src: url("/fonts/montserrat.bold.ttf");
@@ -147,6 +157,7 @@
         text-align: left;
     }
 
+    /* event information card styling */
     .card-info .info-split {
         display: flex;
         align-items: center;
@@ -183,7 +194,7 @@
         background-color: var(--ds3-orange-lighten);
     }
 
-    /* Modal Styling */
+    /* Modal layout and styling part for the event information */
     #modal {
         height: 70vh;
         width: 65vw;
@@ -205,6 +216,8 @@
     #modal-information * {
         flex: 1;
     }
+
+    /* Styling for the left section of modal part */
     .left {
         padding: 2%;
         overflow: auto;
@@ -223,79 +236,8 @@
         font-size: 4vh;
         margin-top: 0;
     }
-    #modal-info {
-        display: relative;
-    }
-    #modal-info::after {
-        position: absolute;
-        content: "";
-        bottom: 0;
-        right: 0;
-        height: 10%;
-        width: 100%;
-        background: linear-gradient(transparent, white);
-    }
-    #modal span {
-        font-size: 2vh;
-        font-weight: 1000;
-        width: 100%;
-    }
-    #desc {
-        font-size: 1.5vh;
-    }
-    #hosts {
-        font-size: 1.5vh;
-        font-weight: 400;
-    }
-    #button-wrapper {
-        width: 100%;
-        display: inline-block;
-    }
-    #button-wrapper a {
-        background-color: var(--ds3-orange);
-        display: inline-block;
-        border: none;
-        font-size: 1.5vh;
-        font-weight: bold;
-        padding: 1.5% 4%;
-        color: white;
-        border-radius: 5px;
-        text-align: center; 
-        display: inline-block;
-        align-items: center;
-        width: auto;
-        margin-top: 1.5vh;
-    }
-    #button-wrapper a:hover {
-        cursor: pointer;
-        background-color: var(--ds3-orange-lighten);
-    }
-    #button-wrapper button {
-        background-color: var(--ds3-orange);
-        display: inline-block;
-        border: none;
-        font-size: 1.5vh;
-        font-weight: bold;
-        padding: 1.5% 4%;
-        color: white;
-        border-radius: 5px;
-        text-align: center; 
-        display: inline-block;
-        align-items: center;
-        width: auto;
-        margin-top: 1.5vh;
-    }
-    button:hover {
-        cursor: pointer;
-        background-color: var(--ds3-orange-lighten);
-    }
-    .disabled {
-        opacity: 0.5;
-    }
-    .disabled:hover {
-        cursor: not-allowed;
-        background-color: var(--ds3-orange);
-    }
+
+    /* Styling for right section of modal with the embedded map, includes overflow control */
     .right {
         display: flex;
         align-items: center;

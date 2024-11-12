@@ -1,4 +1,5 @@
 <script lang='ts'>
+    // Import necessary types and components, declare variables for page title and description
     import type { PageData } from './$types';
     import EventCard from './eventCard.svelte';
 
@@ -8,6 +9,7 @@
 </script>
 
 <svelte:head>
+    <!-- Meta tags for SEO and social media sharing -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
@@ -20,6 +22,7 @@
 </svelte:head>
 
 <section>
+    <!-- Section for displaying upcoming events with conditional rendering for data availability -->
     <div class="title-sec">
         <h1>EVENTS</h1>
     </div>
@@ -39,6 +42,9 @@
                     </div>
                 {/if}
             </div>
+
+            <!-- Placeholder for past events, commented out for now -->
+
             <!-- <div class="event-display">
                 <h2>Past Events</h2>
                 <-- Need to add past events here ->
@@ -58,8 +64,8 @@
     </div>
 </section>
 
-
 <style>
+    /* Responsive styling for event grid layout based on screen size */
     @media screen and (max-width: 768px){
         .event-grid {
             margin-top: 1vh;
@@ -81,6 +87,8 @@
             vertical-align: middle;
         }
     }
+    
+    /* Font and layout settings for events page */
     @font-face {
         font-family: "Montserrat Bold";
         src: url("/fonts/montserrat.bold.ttf");
@@ -99,7 +107,6 @@
         font-family: 'Montserrat Bold', 'Montserrat';
         background-image: url("/images/backgrounds/events.png");
         background-size: cover;
-        background-position: center;
         background-position: center;
         display: flex;
         align-items: center;
